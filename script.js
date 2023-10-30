@@ -12,7 +12,8 @@ data(){
 
 methods: {
  addTask(){
-  this.taskList.push(this.newTask)
+  this.taskList.unshift(this.newTask)
+
   const data = new FormData();
   data.append('todoTask', this.newTask)
   axios.post(this.apiUrl, data)
@@ -22,6 +23,7 @@ methods: {
  },
  removeTask(index) {
    this.taskList.splice(index, 1)
+
    const data = new FormData();
    data.append('removedTask', index);
  
