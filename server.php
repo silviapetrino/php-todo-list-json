@@ -19,6 +19,14 @@ if(isset($_POST['todoTask'])) {
   file_put_contents('tasks.json', json_encode($list));
 }
 
+if(isset($_POST['removedTask'])) {
+  $taskToRemove = $_POST['removedTask'];
+
+    array_splice($list, $taskToRemove, 1);
+
+    file_put_contents("tasks.json", json_encode($list));
+}
+
 // trasformo il file php in file json 
 header('Content-Type: application/json');
 // stampo la lista ricodificata - la lista php torna ad essere stringa e viene stampata

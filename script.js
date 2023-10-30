@@ -19,8 +19,20 @@ methods: {
   .then(result => {
     console.log(result);
   })
- }
+ },
+ removeTask(index) {
+   this.taskList.splice(index, 1)
+   const data = new FormData();
+   data.append('removedTask', index);
+ 
+   axios.post(this.apiUrl, data)
+    .then((result) => {
+     console.log(result)
+    })
+ 
+   },
 },
+
 mounted(){
   // console.log(this.addTask)
 }
