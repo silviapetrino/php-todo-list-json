@@ -1,2 +1,7 @@
+<?php 
 
-$newTask
+$newTask = $_POST['todoTask'];
+var_dump($newTask);
+
+
+?>
