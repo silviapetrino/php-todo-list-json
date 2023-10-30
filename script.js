@@ -15,7 +15,10 @@ methods: {
   this.taskList.push(this.newTask)
   const data = new FormData();
   data.append('todoTask', this.newTask)
-  axios.post(this.apiUrl)
+  axios.post(this.apiUrl, data)
+  .then(result => {
+    console.log(result.data)
+  })
  }
 },
 mounted(){
