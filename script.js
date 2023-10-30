@@ -17,12 +17,12 @@ methods: {
   data.append('todoTask', this.newTask)
   axios.post(this.apiUrl, data)
   .then(result => {
-    console.log(result.data)
+    console.log(result);
   })
  }
 },
 mounted(){
-  console.log(this.addTask)
+  // console.log(this.addTask)
 }
 
 
