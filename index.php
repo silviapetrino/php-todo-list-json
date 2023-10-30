@@ -22,7 +22,7 @@
   <p>Your tasks:</p>
     <li v-for="(task, index) in taskList" class="list-group-item">{{ task }}</li>
   </ul>
-  <p v-else>You don't have tasks to do, if you want add them to list</p>
+  <p v-else>You don't have any tasks to do, if you want add them to list</p>
 
   <!-- add an item to list  -->
   <div class="insert-task text-center py-2">
