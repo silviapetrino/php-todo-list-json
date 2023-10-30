@@ -22,13 +22,12 @@
   <p>Your tasks:</p>
     <li v-for="(task, index) in taskList" class="list-group-item">{{ task }}</li>
   </ul>
-
   <p v-else>You don't have tasks to do, if you want add them to list</p>
 
   <!-- add an item to list  -->
   <div class="insert-task text-center py-2">
-    <input @keyup.enter="addTask" v-model.trim="newTask" type="text" class="rounded-2 py-1 px-1">
-    <button @click="addTask" class="btn btn-primary ms-2 ">Add Task</button>
+      <input name="taskAdded" @keyup.enter="addTask" v-model.trim="newTask" type="text" class="rounded-2 py-1 px-1">
+      <button type="submit" @click="addTask" class="btn btn-primary ms-2 ">Add Task</button>
   </div>
 
 </div>

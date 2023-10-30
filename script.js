@@ -12,12 +12,7 @@ data(){
 methods: {
  addTask(){
   this.taskList.push(this.newTask)
-  this.newTask = ""
  }
-},
-
-mounted() {
-  console.log(this.newTask)
 }
 
 
