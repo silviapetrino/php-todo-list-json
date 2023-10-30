@@ -14,6 +14,25 @@
 </head>
 <body>
 
+<div class="container my-5 py-2 bg-warning" id="App">
+  <h2>To Do List</h2>
+  
 
+  <ul v-if="taskList.length > 0" class="list-group">
+  <p>Your tasks:</p>
+    <li v-for="(task, index) in taskList" class="list-group-item">{{ task }}</li>
+  </ul>
+
+  <p v-else>You don't have tasks to do, if you want add them to list</p>
+
+  <div class="insert-task text-center py-2">
+    <input @keyup.enter="addTask" v-model.trim="newTask" type="text" class="rounded-2 py-1 px-1">
+    <button @click="addTask" class="btn btn-primary ms-2 ">Add Task</button>
+  </div>
+
+
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
