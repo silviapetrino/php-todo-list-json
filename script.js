@@ -12,12 +12,12 @@ data(){
 
 methods: {
  addTask(){
-  this.taskList.unshift({ text: this.newTask, done: false })
+  this.taskList.unshift(this.newTask)
 
   const data = new FormData();
   // Converto l'oggetto in una stringa JSON
 
-  data.append('todoTask', JSON.stringify(newTask));
+  data.append('todoTask', this.newTask);
   axios.post(this.apiUrl, data)
   .then(result => {
     this.taskList = result.data;
