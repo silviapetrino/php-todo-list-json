@@ -7,7 +7,7 @@ data(){
     taskList: [],
     newTask: '',
     apiUrl: 'server.php',
-  
+    done: false
   }
 },
 
@@ -37,18 +37,18 @@ methods: {
     })
    },
 
-  //  toggleTaskDone() {
-  //   this.done = !this.done
+   toggleTaskDone() {
+    this.done = !this.done
 
-  //   const data = new FormData();
-  //   data.append('doneTask', this.done);
+    const data = new FormData();
+    data.append('doneTask', this.done);
 
-  //   axios.post(this.apiUrl, data)
-  //     .then((result) => {
-  //       this.taskList = result.data
-  //     })
+    axios.post(this.apiUrl, data)
+      .then((result) => {
+        this.taskList = result.data
+      })
 
-  //  }
+   }
  
 },
 
