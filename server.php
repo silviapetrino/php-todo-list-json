@@ -12,8 +12,13 @@ $list = json_decode($json_string, true);
 if(isset($_POST['todoTask'])) {
   $newTask = $_POST['todoTask'];
 
+  $taskObj = [
+    'text' => $newTask,
+    'done' => false
+  ];
+
   // Aggiungo (push) LA NUOVA TASK alla lista esistente
-  $list[] = $newTask;
+  $list[] = $taskObj;
 
   // salvo il dato nel file json 
   file_put_contents('tasks.json', json_encode($list));
