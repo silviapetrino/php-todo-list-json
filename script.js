@@ -12,14 +12,17 @@ data(){
 
 methods: {
  addTask(){
-  this.taskList.unshift(this.newTask)
+  this.taskList.unshift({ text: this.newTask, done: false })
 
   const data = new FormData();
-  data.append('todoTask', this.newTask)
+  // Converto l'oggetto in una stringa JSON
+
+  data.append('todoTask', JSON.stringify(newTask));
   axios.post(this.apiUrl, data)
   .then(result => {
-    console.log(result);
-  })
+    this.taskList = result.data;
+  });
+  this.newTask.text = '';
  },
  removeTask(index) {
    this.taskList.splice(index, 1)
@@ -29,7 +32,7 @@ methods: {
  
    axios.post(this.apiUrl, data)
     .then((result) => {
-     console.log(result)
+      this.taskList = result.data;
     })
  
    },

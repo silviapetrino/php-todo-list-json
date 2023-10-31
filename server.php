@@ -1,6 +1,6 @@
 <?php 
 
-// var_dump($_POST['todoTask']);
+var_dump($_POST['todoTask']);
 
 $json_string = file_get_contents('tasks.json');
 
@@ -32,4 +32,5 @@ header('Content-Type: application/json');
 // stampo la lista ricodificata - la lista php torna ad essere stringa e viene stampata
 
 echo json_encode($list);
+
 ?>
