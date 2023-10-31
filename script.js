@@ -20,9 +20,9 @@ methods: {
   data.append('todoTask', this.newTask);
   axios.post(this.apiUrl, data)
   .then(result => {
-    this.taskList = result.data;
+    console.log(result)
   });
-  this.newTask.text = '';
+  this.newTask = '';
  },
  removeTask(index) {
    this.taskList.splice(index, 1)
@@ -32,10 +32,12 @@ methods: {
  
    axios.post(this.apiUrl, data)
     .then((result) => {
-      this.taskList = result.data;
+      console.log(result)
     })
- 
    },
+
+
+ 
 },
 
 mounted(){

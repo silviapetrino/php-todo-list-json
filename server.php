@@ -16,7 +16,6 @@ if(isset($_POST['todoTask'])) {
     'text' => $newTask,
     'done' => false
   ];
-
   // Aggiungo (push) LA NUOVA TASK alla lista esistente
   $list[] = $taskObj;
 
@@ -31,6 +30,8 @@ if(isset($_POST['removedTask'])) {
 
     file_put_contents("tasks.json", json_encode($list));
 }
+
+
 
 // trasformo il file php in file json 
 header('Content-Type: application/json');
