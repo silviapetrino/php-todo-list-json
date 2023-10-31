@@ -1,10 +1,8 @@
 <?php 
 
-var_dump($_POST['todoTask']);
 
 $json_string = file_get_contents('tasks.json');
 
-var_dump($json_string);
 
 $list = json_decode($json_string, true);
 
