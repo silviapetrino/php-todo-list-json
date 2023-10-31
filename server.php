@@ -16,7 +16,6 @@ if(isset($_POST['todoTask'])) {
     'text' => $newTask,
     'done' => false
   ];
-
   if(isset($_POST['doneTask'])) {
     $taskDone = $_POST['doneTask'];
     $taskObj = [

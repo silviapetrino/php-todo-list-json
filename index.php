@@ -25,7 +25,7 @@
   <!-- tasks list  -->
   <ul v-if="taskList.length > 0" class="list-group">
   <p>Your tasks:</p>
-    <li @click="toggleTaskDone" v-for="(task, index) in taskList" class="list-group-item d-flex justify-content-between">
+    <li @click="toggleTaskDone()" v-for="(task, index) in taskList" class="list-group-item d-flex justify-content-between">
       <span :class="{done: done}">{{ task }}</span>
       
       <button @click="removeTask(index)" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
