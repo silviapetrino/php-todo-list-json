@@ -33,7 +33,7 @@ methods: {
  
    axios.post(this.apiUrl, data)
     .then((result) => {
-      console.log(result)
+      this.taskList = result.data
     })
    },
 
@@ -45,15 +45,19 @@ methods: {
 
     axios.post(this.apiUrl, data)
       .then((result) => {
-        console.log(result)
+        this.taskList = result.data
       })
 
    }
  
 },
 
-mounted(){
-  // console.log(this.addTask)
+mounted() {
+  // Carico le attività iniziali dal server
+  axios.get(this.apiUrl)
+  .then(result => {
+    this.taskList = result.data;
+  });
 }
 
 
