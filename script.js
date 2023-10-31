@@ -6,7 +6,8 @@ data(){
   return {
     taskList: [],
     newTask: '',
-    apiUrl: 'server.php'
+    apiUrl: 'server.php',
+    done: false
   }
 },
 
@@ -15,8 +16,7 @@ methods: {
   this.taskList.unshift(this.newTask)
 
   const data = new FormData();
-  // Converto l'oggetto in una stringa JSON
-
+  
   data.append('todoTask', this.newTask);
   axios.post(this.apiUrl, data)
   .then(result => {
@@ -24,6 +24,7 @@ methods: {
   });
   this.newTask = '';
  },
+
  removeTask(index) {
    this.taskList.splice(index, 1)
 
@@ -36,7 +37,18 @@ methods: {
     })
    },
 
+   toggleTaskDone() {
+    this.done = !this.done
 
+    const data = new FormData();
+    data.append('doneTask', this.done);
+
+    axios.post(this.apiUrl, data)
+      .then((result) => {
+        console.log(result)
+      })
+
+   }
  
 },
 

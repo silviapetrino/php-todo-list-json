@@ -13,7 +13,7 @@
   <title>todo-list</title>
   <style>
     .done {
-      text-decoration: underline;
+      text-decoration: line-through;
     }
   </style>
 </head>
@@ -25,8 +25,8 @@
   <!-- tasks list  -->
   <ul v-if="taskList.length > 0" class="list-group">
   <p>Your tasks:</p>
-    <li v-for="(task, index) in taskList" class="list-group-item d-flex justify-content-between">
-      <span>{{ task }}</span>
+    <li @click="toggleTaskDone" v-for="(task, index) in taskList" class="list-group-item d-flex justify-content-between">
+      <span :class="{done: done}">{{ task }}</span>
       
       <button @click="removeTask(index)" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
       <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
