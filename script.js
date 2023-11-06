@@ -37,7 +37,7 @@ methods: {
     })
    },
 
-   toggleTaskDone() {
+   toggleTaskDone(index) {
     this.done = !this.done
 
     const data = new FormData();
